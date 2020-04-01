@@ -1,0 +1,29 @@
+package com.capgemini.javafullstack.file;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class TestA {
+	public static void main(String[] args) {
+
+		File f = new File("Shalini.txt");
+
+		String mesg = "Hi how are you";
+
+		byte[] data  = mesg.getBytes();
+		try {
+			f.createNewFile();
+			FileOutputStream fout = new FileOutputStream("Shalini.txt");
+			fout.write(data);
+			fout.close();
+			System.out.println("Data is written");
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,10 @@
+package com.capgemini.librarymanagementjdbc.dao;
+
+import com.capgemini.librarymanagementjdbc.dto.AdminBean;
+import com.capgemini.librarymanagementjdbc.dto.UserBean;
+
+public interface UserDAO {
+
+	boolean register (UserBean user);
+	String auth(String email,String password);
+}

@@ -1,0 +1,81 @@
+package com.capgemini.javafullstack.controller;
+
+import java.util.List;
+
+import com.capgemini.javafullstack.designpattern.dao.EmployeeDAO;
+import com.capgemini.javafullstack.designpattern.dao.EmployeeDAOFactory;
+import com.capgemini.javafullstack.designpattern.dao.EmployeeDesignPatternJDBCImplements;
+import com.capgemini.javafullstack.designpattern.dto.Employee;
+
+public class TestEmployeeJDBC {
+	public static void main(String[] args) {
+		// UPDATE
+		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
+		System.out.println(dao);
+		
+		//EmployeeDAO dao = new EmployeeDesignPatternJDBCImplements();
+		Employee emp = new Employee();
+		/*	emp.setId(1);
+		emp.setName("SHIVARATHRI");
+		boolean record = dao.updateEmployeeInfo(emp);	
+		 */
+		//DELETE
+		/*	
+		boolean rs= dao.deleteEmployeeInfo(2);
+
+		System.out.println("Record is deleted "+rs);
+
+		 */
+
+		/*	//CREATE
+		emp.setId(1);
+		emp.setName("RAVIKUMAR");
+		emp.setEmail("ravikumar@gmail.com");
+		emp.setPhone(987654321);
+		emp.setSalary(21000.0);
+		emp.setDeptid(20);
+		emp.setBloodgroup("b+ve");
+		emp.setAge(23);
+		emp.setDob("1998-07-13");
+
+		boolean rs = dao.createEmployeeInfo(emp);
+
+		 */	
+		// getting all the information
+		/*
+		List<Employee> l =dao.getALLInfo();
+		java.util.Iterator<Employee> itr = l.iterator();
+		while (itr.hasNext()) {
+			Employee e = itr.next();
+
+			System.out.println("============================================");
+			System.out.println("ID...."+e.getId());
+			System.out.println("NAME...."+e.getName());
+			System.out.println("EMAIL...."+e.getEmail());
+			System.out.println("MOBILE NO....."+e.getPhone());
+			System.out.println("salary...."+e.getSalary());
+			System.out.println("DEPTNO....."+e.getDeptid());
+			System.out.println("BLOODGROUP....."+e.getBloodgroup());
+			System.out.println("AGE...."+e.getAge());
+			System.out.println("DOB....."+e.getDob());
+
+
+		}
+		 */
+
+		// getting information with id
+
+
+		Employee e = dao.getEmployeeDetails(10);
+		System.out.println("ID...."+e.getId());
+		System.out.println("NAME...."+e.getName());
+		System.out.println("EMAIL...."+e.getEmail());
+		System.out.println("MOBILE NO....."+e.getPhone());
+		System.out.println("salary...."+e.getSalary());
+		System.out.println("DEPTNO....."+e.getDeptid());
+		System.out.println("BLOODGROUP....."+e.getBloodgroup());
+		System.out.println("AGE...."+e.getAge());
+		System.out.println("DOB....."+e.getDob());
+
+	}
+}

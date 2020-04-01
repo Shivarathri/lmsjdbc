@@ -1,0 +1,17 @@
+package com.capgemini.librarymanagement.dao;
+
+import com.capgemini.librarymanagement.dto.AdminBean;
+import com.capgemini.librarymanagement.dto.BookBean;
+
+public interface AdminDAO {
+	
+	Book addBook(Book book);
+	LinkedList<Book> searchBookTitle(String bookTitle);
+	LinkedList<Book> searchBookAuthor(String bookAuthor);
+	LinkedList<Book> searchBookType(String bookType);
+	int updateBook(int bookId);
+	boolean removeBook(int bookId);
+	LinkedList<Integer> getBookIds();
+	LinkedList<Book> getBookInfo();
+	
+}

@@ -1,0 +1,13 @@
+package com.capgemini.librarymanagement.dao;
+
+import com.capgemini.librarymanagement.dto.BookBean;
+import com.capgemini.librarymanagement.dto.StudentBean;
+
+public interface StudentDAO {
+	boolean register (StudentBean std);
+	StudentBean auth(String email,String password);
+	BookBean search(int bid);
+	boolean returnBook(BookBean book);
+	BookBean borrow(int bid);
+	
+}

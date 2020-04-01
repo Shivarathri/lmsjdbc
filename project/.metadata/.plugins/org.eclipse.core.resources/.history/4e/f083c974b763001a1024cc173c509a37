@@ -1,0 +1,12 @@
+package com.capgemini.librarymanagement.dto;
+
+import java.time.LocalDate;
+
+public class RequestBean {
+	private BookBean bookBean;
+	private StudentBean studentBean;
+	private boolean isIssued;
+	private boolean isReturned;
+	private LocalDate issuedDate;
+	private LocalDate returnedDate;
+}

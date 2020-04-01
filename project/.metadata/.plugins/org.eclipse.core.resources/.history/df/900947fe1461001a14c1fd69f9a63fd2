@@ -1,0 +1,68 @@
+package com.capgemini.librarymanagement.validation;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import com.capgemini.librarymanagement.exception.ValidationException;
+
+public class ValidationAdminStudent {
+	public boolean validatedId(int id) throws ValidationException {
+		String idRegEx = "[0-9]{1}[0-9]{5}" ;
+		boolean result = false;
+		if (Pattern.matches(idRegEx, String.valueOf(id))) {
+			result = true;
+		} else {
+			throw new ValidationException("Id should contains exactly 6 digits");
+		}
+		return result;
+	}
+	public boolean validatedName(String name) throws ValidationException {
+		String nameRegEx = "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$" ;
+		boolean result = false;
+		Pattern pattern = Pattern.compile(nameRegEx);
+		Matcher matcher = pattern.matcher(name);
+		if (matcher.matches()) {
+			result = true;
+		} else {
+			throw new ValidationException("Name should  contains only Alpabates");
+		}
+		return result;
+	}
+
+	public boolean validatedMobile(String mobile) throws ValidationException {
+		String mobileRegEx = "(0/91)?[4-9][0-9]{9}" ;
+		boolean result = false;
+		Pattern pattern = Pattern.compile(mobileRegEx);
+		Matcher matcher = pattern.matcher(mobile);
+		if (matcher.matches()) {
+			result = true;
+		} else {
+			throw new ValidationException("Mobile Number  will start from 4 and It should contains 10 numbers ");
+		}
+		return result;
+	}
+	public boolean validatedEmail(String email) throws ValidationException {
+		String emailRegEx = "^[A-Z0-9+_.-]+@[A-Z0-9.-]+$";
+		boolean result = false;
+
+		if (Pattern.matches(emailRegEx, String.valueOf(email))) { 
+			result = true;
+		} else {
+			throw new ValidationException("Enter proper Email  "); }
+
+		return result;
+	}
+
+	public boolean validatedPassword(String password) throws ValidationException {
+		String passwordRegEx = "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})" ;
+		boolean result = false;
+		Pattern pattern = Pattern.compile(passwordRegEx);
+		Matcher matcher = pattern.matcher(password);
+		if (matcher.matches()) {
+			result = true;
+		} else {
+			throw new ValidationException("Password should contains atleast 8 characters ");
+		}
+		return result;
+	}
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.AdminDAOImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.AdminService"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.AdminServiceImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.AdminDAO"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.StudentDAOImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.StudentDAO"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.StudentServiceImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.exception.StudentException"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.BookDAOImplementation"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.BookServiceDAOImplementation"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.factory.BookFactory"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.BookServiceDAO"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.StudentServiceDAO"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.factory.StudentFactory"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.service.AdminServiceDAO"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.factory.AdminFactory"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dto.AdminBean"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dto.StudentBean"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dao.BookDAO"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.exception.AdminException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.db.DB"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.validation.ValidationAdminStudent"/>
+<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.exception.ValidationException"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.regex.Matcher"/>
+<fullyQualifiedTypeName name="com.capgemini.librarymanagement.dto.BookBean"/>
+</qualifiedTypeNameHistroy>

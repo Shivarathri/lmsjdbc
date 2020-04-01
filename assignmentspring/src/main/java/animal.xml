@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean id="dog" class="com.capgemini.javafullstack.bean.Dog" primary="true"></bean>
+    <bean id="cat" class="com.capgemini.javafullstack.bean.Cat"></bean>
+    
+    <bean id="pet" class="com.capgemini.javafullstack.bean.Pet" autowire="constructor">
+    <constructor-arg name="name" value="aaaa"></constructor-arg>
+    <!-- <constructor-arg name="animal" ref="dog"></constructor-arg> -->
+    </bean>
+    
+  <!--   
+    <bean id="car" class="com.capgemini.javafullstack.bean.Car">
+    <constructor-arg  name="regno" value="1111"></constructor-arg>
+    <constructor-arg name="name" value="AUDI"></constructor-arg>
+    </bean>
+    
+    <bean id="engine" class="com.capgemini.javafullstack.bean.Engine">
+    <property name="engno" value="1234"></property>
+    <property name="car" ref="car" ></property>
+    </bean> -->
+    
+    
+    
+    
+    </beans>

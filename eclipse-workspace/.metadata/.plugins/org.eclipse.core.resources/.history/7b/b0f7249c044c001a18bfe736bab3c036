@@ -1,0 +1,30 @@
+package com.capgemini.javafullstack.file;
+
+public class Boxing {
+
+	public static void main(String[] args) {
+		int a = 10;
+		Integer i = new Integer(a); // Boxing
+
+		byte b = 20;
+		byte b1 = b;
+
+		Double d1 = new Double(10);
+		double d = d1.doubleValue(); // UnBoxing
+
+		short sd = 10;
+		Short s1 = new Short(sd);
+		Short s = s1; // Auto UnBoxing
+
+		int maxoftwonum = Integer.max(10, 20);
+		System.out.println("max value" + maxoftwonum);
+
+		byte s2 = Byte.parseByte("5");
+		System.out.println(s2);
+
+		double e = Double.parseDouble("24256.2");
+		System.out.println(e);
+		boolean x = Boolean.parseBoolean("true");
+		System.out.println(x);
+	}
+}

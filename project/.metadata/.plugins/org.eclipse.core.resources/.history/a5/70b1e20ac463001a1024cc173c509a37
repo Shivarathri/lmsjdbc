@@ -1,0 +1,21 @@
+package com.capgemini.librarymanagement.dto;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class StudentBean implements Serializable {
+	private int sid;
+	private String sname;
+	private String email;
+	private String password;
+	private String sdepartment;
+	private String phone;
+	private Date issueDate;
+	private Date returnDate;
+	private int booksBorrowed;
+	
+	
+	
+	
+	
+}

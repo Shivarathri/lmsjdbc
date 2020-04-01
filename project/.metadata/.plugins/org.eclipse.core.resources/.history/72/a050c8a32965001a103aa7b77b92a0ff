@@ -1,0 +1,52 @@
+package com.capgemini.librarymanagementjdbc.service;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.capgemini.librarymanagementjdbc.dao.StudentDAO;
+import com.capgemini.librarymanagementjdbc.dto.UserBean;
+import com.capgemini.librarymanagementjdbc.factory.StudentFactory;
+
+public class StudentServiceImplementation implements StudentServiceDAO {
+
+	private StudentDAO dao=StudentFactory.getStudentDAO();
+
+	public com.capgemini.librarymanagementjdbc.dto.BookBean searchBookTitle(String bname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public com.capgemini.librarymanagementjdbc.dto.BookBean searchBookAuthor(String bAuthor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public com.capgemini.librarymanagementjdbc.dto.BookBean searchBookType(String bookType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<Integer> getBookIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<com.capgemini.librarymanagementjdbc.dto.BookBean> getBooksInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public com.capgemini.librarymanagementjdbc.dto.RequestBean bookRequest(UserBean user,
+			com.capgemini.librarymanagementjdbc.dto.BookBean book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public com.capgemini.librarymanagementjdbc.dto.RequestBean bookReturn(UserBean user,
+			com.capgemini.librarymanagementjdbc.dto.BookBean book) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

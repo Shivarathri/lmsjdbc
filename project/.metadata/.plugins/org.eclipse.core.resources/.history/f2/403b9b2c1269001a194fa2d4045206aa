@@ -1,0 +1,31 @@
+package com.capgemini.librarymanagementjdbc.service;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.capgemini.librarymanagementjdbc.dao.StudentDAO;
+import com.capgemini.librarymanagementjdbc.dao.UsersDAO;
+import com.capgemini.librarymanagementjdbc.dto.BookBean;
+import com.capgemini.librarymanagementjdbc.dto.RequestBean;
+import com.capgemini.librarymanagementjdbc.dto.UsersBean;
+import com.capgemini.librarymanagementjdbc.factory.StudentFactory;
+import com.capgemini.librarymanagementjdbc.factory.UserFactory;
+
+public class UsersServiceImplementation implements UsersService {
+
+	UsersDAO dao = UserFactory.getUsersDAO();
+
+	@Override
+	public boolean register(UsersBean info) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public UsersBean auth(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="hello" class="com.capgemini.javafullstack.bean.Hello"></bean>
+
+	<bean id="addre"
+		class="com.capgemini.javafullstack.bean.EmployeeAddressInfo">
+
+		<!-- <constructor-arg name="aid" value="101"></constructor-arg> <constructor-arg 
+			name="city" value="Hyd"></constructor-arg> <constructor-arg name="addreesType" 
+			value="Current"></constructor-arg> -->
+
+
+		<property name="aid" value="101"></property>
+		<property name="city" value="Hyd"></property>
+		<property name="addressType" value="Current"></property>
+
+	</bean>
+
+	<bean id="primary"
+		class="com.capgemini.javafullstack.bean.EmployeePrimaryInfo"
+		scope="prototype">
+
+
+		<!-- <constructor-arg name="id" value="1"></constructor-arg> <constructor-arg 
+			name="name" value="Prashanth"></constructor-arg> <constructor-arg name="address" 
+			ref="addre"></constructor-arg> -->
+
+		<property name="id" value="1"></property>
+		<property name="name" value="Ravi"></property>
+		<property name="address" ref="addre"></property>
+	</bean>
+	
+	<bean id="lion" class="com.capgemini.javafullstack.bean.Lion" primary="true" ></bean>
+	<bean id="cat" class="com.capgemini.javafullstack.bean.Cat" ></bean>
+
+	<bean id="pet" class="com.capgemini.javafullstack.bean.Pet" autowire="constructor">
+
+		<constructor-arg name="name" value="aaa"></constructor-arg> 
+		
+		<!-- 
+		<constructor-arg 
+			name="animal" ref="cat"></constructor-arg> -->
+
+
+		<!-- <property name="name" value="Rocky-Cat"></property>
+		
+		<property name="animal" ref="cat"></property> -->
+		
+	</bean>
+
+</beans>
+

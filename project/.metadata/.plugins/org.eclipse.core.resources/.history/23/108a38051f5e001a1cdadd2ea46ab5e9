@@ -1,0 +1,105 @@
+package com.capgemini.librarymanagement.dao;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.capgemini.librarymanagement.db.DB;
+import com.capgemini.librarymanagement.dto.BookBean;
+import com.capgemini.librarymanagement.dto.StudentBean;
+import com.capgemini.librarymanagement.exception.AdminException;
+import com.capgemini.librarymanagement.exception.StudentException;
+
+public class StudentDAOImplementation implements StudentDAO {
+
+	public boolean register(StudentBean std) {
+		for (StudentBean studentbean : DB.student) {
+			if (studentbean.getEmail().equals(std.getEmail())) {
+				return false;
+			}
+
+		}
+		DB.student.add(std);
+		return true;
+	}
+	
+
+	public StudentBean auth(String email, String password) {
+		for (StudentBean bean : DB.student) {
+			if (bean.getEmail().equals(email) && bean.getPassword().equals(password)) {
+				System.out.println("Login succssful");
+				return bean;
+			} 
+			throw new StudentException ("Invalid email and password");
+
+		}
+		return null;
+	}
+
+
+	public LinkedList<BookBean> searchBookTitle(String bname) {
+		LinkedList<BookBean> searchList=new LinkedList<BookBean>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			String retrievedBname=retrievedBook.getBname();
+			if(bname.equals(retrievedBname))
+			{
+				searchList.add(retrievedBook);	
+				return searchList;
+				
+				
+			}
+		}
+		if(searchList.size()==0)
+		{
+			throw new StudentException ("Book is not found");
+		}
+		else
+		{
+			return searchList;
+		}
+	}
+
+
+	public LinkedList<BookBean> searchBookAuthor(String bAuthor) {
+		LinkedList<BookBean> searchList=new LinkedList<BookBean>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			String retrievedBAuthor=retrievedBook.getBauthor();
+			if(bAuthor.equals(retrievedBAuthor))
+			{
+				searchList.add(retrievedBook);	
+			}
+		}
+		if(searchList.size()==0)
+		{
+			throw new StudentException ("Invalid email and password");
+		}
+		else
+		{
+			return searchList;
+		}	
+	}
+
+
+	public LinkedList<BookBean> searchBookType(String bookType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public LinkedList<Integer> getBookIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public LinkedList<BookBean> getBooksInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+
+}

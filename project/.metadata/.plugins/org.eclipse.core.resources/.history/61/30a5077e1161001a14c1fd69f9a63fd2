@@ -1,0 +1,190 @@
+package com.capgemini.librarymanagement.dao;
+
+import java.util.LinkedList;
+
+import com.capgemini.librarymanagement.db.DB;
+import com.capgemini.librarymanagement.dto.AdminBean;
+import com.capgemini.librarymanagement.dto.BookBean;
+import com.capgemini.librarymanagement.exception.AdminException;
+
+public class AdminDAOImplementation implements AdminDAO {
+
+	public boolean register(AdminBean adm) {
+
+		for (AdminBean adminbean : DB.admin) {
+			if (adminbean.getEmail().equals(adm.getEmail())) {
+				return false;
+			}
+
+		}
+		DB.admin.add(adm);
+		return true;
+	}
+
+	public AdminBean auth(String email1, String password1) {
+		for (AdminBean bean : DB.admin) {
+			if (bean.getEmail().equals(email1) && bean.getPassword().equals(password1)) {
+				System.out.println("Login succssful");
+				return bean;
+			} 
+			throw new AdminException ("Invalid email and password");
+
+		}
+		return null;
+	}
+
+
+	public boolean delete(BookBean book) {
+		for (BookBean bean : DB.book) {
+			if (bean.getBid()==book.getBid()) {
+				return false;
+			}
+
+		}
+		DB.book.add(book);
+		return true;
+	}
+
+
+	public boolean addBook(BookBean book) {
+		for (BookBean bean : DB.book) {
+			if (bean.getBid()==book.getBid()) {
+				return false;
+			}
+		}
+		DB.book.add(book);
+		return true;
+	}
+
+	public LinkedList<BookBean> searchBookTitle(String bname) {
+		LinkedList<BookBean> searchList=new LinkedList<BookBean>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			String retrievedBname=retrievedBook.getBname();
+			if(bname.equals(retrievedBname))
+			{
+				searchList.add(retrievedBook);	
+				return searchList;
+			}
+		}
+		if(searchList.size()==0)
+		{
+			throw new AdminException("Book not found");
+		}
+		else
+		{
+			return searchList;
+		}
+
+	}
+
+	public LinkedList<BookBean> searchBookAuthor(String bAuthor) {
+
+		LinkedList<BookBean> searchList=new LinkedList<BookBean>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			String retrievedBAuthor=retrievedBook.getBauthor();
+			if(bAuthor.equals(retrievedBAuthor))
+			{
+				searchList.add(retrievedBook);	
+			}
+		}
+		if(searchList.size()==0)
+		{
+			throw new AdminException("Book not found");
+		}
+		else
+		{
+			return searchList;
+		}		
+
+	}
+
+	public LinkedList<BookBean> searchBookType(String bookType) {
+		LinkedList<BookBean> searchList=new LinkedList<BookBean>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			String retrievedBookType=retrievedBook.getCategory();
+			if(bookType.equals(retrievedBookType))
+			{
+				searchList.add(retrievedBook);	
+			}
+		}
+		if(searchList.size()==0)
+		{
+			throw new AdminException("Book not found");
+		}
+		else
+		{
+			return searchList;
+		}		
+	}
+
+	public int updateBook(int bid) {
+		int status=0;
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			int retrievedId=retrievedBook.getBid();
+			if(bid==retrievedId)
+			{
+				status++;
+				break;
+			}
+		}
+		throw new AdminException("Book not updated");
+
+
+	}
+
+	public boolean removeBook(int bid) {
+		boolean status=false;
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			int retrievedId=retrievedBook.getBid();
+			if(bid==retrievedId)
+			{
+				status=true;
+				DB.book.remove(i);
+				break;
+			}
+		}
+		return status;
+
+	}
+
+	public LinkedList<Integer> getBookIds() {
+		LinkedList<Integer> idList=new LinkedList<Integer>();
+		for(int i=0;i<=DB.book.size()-1;i++)
+		{
+			BookBean retrievedBook=DB.book.get(i);
+			int retrievedBookId=retrievedBook.getBid();
+			idList.add(retrievedBookId);
+		}
+		return idList;
+	}
+
+	public LinkedList<BookBean> getBooksInfo() {
+		return DB.book;
+	}
+
+	public boolean issueBook(int bid) {
+		for (BookBean bookbean : DB.book) {
+			if (bookbean.getBid()==bid ) {
+				DB.book.remove(bid);
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
+		return false;
+	}
+
+
+
+}

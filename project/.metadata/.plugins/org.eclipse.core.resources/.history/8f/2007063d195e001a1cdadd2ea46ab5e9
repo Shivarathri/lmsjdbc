@@ -1,0 +1,14 @@
+package com.capgemini.librarymanagement.dao;
+
+import com.capgemini.librarymanagement.dto.AdminBean;
+import com.capgemini.librarymanagement.dto.BookBean;
+
+public interface AdminDAO {
+	
+	boolean register (AdminBean adm);
+	AdminBean auth(String email,String password);
+	boolean addBook(BookBean book);
+	boolean delete(BookBean book);
+	BookBean search(int book);
+	
+}

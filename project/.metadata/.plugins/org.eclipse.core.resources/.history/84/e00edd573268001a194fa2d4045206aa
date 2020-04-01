@@ -1,0 +1,84 @@
+package com.capgemini.librarymanagementjdbc.dao;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.capgemini.librarymanagementjdbc.dto.AdminBean;
+import com.capgemini.librarymanagementjdbc.dto.BookBean;
+import com.capgemini.librarymanagementjdbc.dto.RequestBean;
+import com.capgemini.librarymanagementjdbc.dto.UserBean;
+
+public class AdminDAOImplementation  implements AdminDAO {
+
+	public boolean register(AdminBean adm) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public AdminBean auth(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean addBook(BookBean book) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public BookBean searchBookTitle(String bname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public BookBean searchBookAuthor(String bAuthor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public BookBean searchBookType(String bookType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int updateBook(int bid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean removeBook(int bid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public LinkedList<Integer> getBookIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<BookBean> getBooksInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<UserBean> showUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<RequestBean> showRequests() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean bookIssue(UserBean user, BookBean book) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isBookReceived(UserBean user, BookBean book) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+}

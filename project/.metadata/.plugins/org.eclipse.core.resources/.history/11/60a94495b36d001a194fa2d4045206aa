@@ -1,0 +1,98 @@
+package com.capgemini.librarymanagementsystemjdbc.dao;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.LinkedList;
+import java.util.Properties;
+
+import com.capgemini.librarymanagementsystemjdbc.dto.BookBean;
+import com.capgemini.librarymanagementsystemjdbc.dto.UsersBean;
+
+public class UsersDAOImplement implements UsersDAO {
+
+	public boolean register(UsersBean user) {
+		try(FileInputStream info = new FileInputStream("db.properties");){
+			Properties pro = new Properties();
+			pro.load(info);
+			try(Connection conn = DriverManager.getConnection(pro.getProperty("dburl"),pro);
+				PreparedStatement pstmt = conn.prepareStatement("insert into users values(?,?,?,?,?,?,?)")){
+				Class.forName(pro.getProperty("path"));
+				pstmt.setInt(1,user.getuId());
+				pstmt.setString(2, user.getFirstName());
+				pstmt.setString(3, user.getLastName());
+				pstmt.setString(4, user.getEmail());
+				pstmt.setString(5, user.getPassword());
+				pstmt.setLong(6, user.getMobile());
+				pstmt.setString(7, user.getRole());
+				int count = pstmt.executeUpdate();
+				if(user.getEmail().isEmpty() && count==0) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public UsersBean login(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean addBook(BookBean book) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean removeBook(int bId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean updateBook(BookBean book) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean issueBook(int bId, int uId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean request(int bId, String author) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public BookBean borrowBook(int bId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<BookBean> searchBookByTitle(String bookName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<BookBean> searchBookByAuthor(String author) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LinkedList<BookBean> getBooksInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean returnBook(int bId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+}

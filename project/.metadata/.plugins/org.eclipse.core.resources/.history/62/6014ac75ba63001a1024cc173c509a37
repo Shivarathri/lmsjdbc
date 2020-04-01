@@ -1,0 +1,23 @@
+package com.capgemini.librarymanagement.dao;
+
+import java.util.LinkedList;
+
+import com.capgemini.librarymanagement.dto.AdminBean;
+import com.capgemini.librarymanagement.dto.BookBean;
+import com.capgemini.librarymanagement.dto.RequestBean;
+import com.capgemini.librarymanagement.dto.StudentBean;
+
+public interface StudentDAO {
+	
+	boolean register (StudentBean std);
+	StudentBean auth(String email,String password);
+	LinkedList<BookBean> searchBookTitle(String bname);
+	LinkedList<BookBean> searchBookAuthor(String bAuthor);
+	LinkedList<BookBean> searchBookType(String bookType);
+	LinkedList<Integer> getBookIds();
+	LinkedList<BookBean> getBooksInfo();
+	boolean requestBook(int bid, String bAuthor);
+	boolean returnBook(int bid);
+	public RequestBean bookRequest(StudentBean bookBean, BookBean bookBean);
+	
+}

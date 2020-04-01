@@ -1,0 +1,17 @@
+package com.capgemini.librarymanagementjdbc.dao;
+
+import com.capgemini.librarymanagementjdbc.dto.UserBean;
+
+public class UserDAOImplementation implements UsersDAO {
+
+	public boolean register(UserBean user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String auth(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

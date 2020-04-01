@@ -1,0 +1,21 @@
+package com.capgemini.librarymanagementsystemjdbc.dao;
+
+import java.util.LinkedList;
+
+import com.capgemini.librarymanagementsystemjdbc.dto.BookBean;
+import com.capgemini.librarymanagementsystemjdbc.dto.UsersBean;
+
+public interface UsersDAO {
+	boolean register(UsersBean user);
+	UsersBean login(String email,String password);
+	boolean addBook(BookBean book);
+	boolean removeBook(int bId);
+	boolean updateBook(BookBean book);
+	boolean issueBook(int bId,int uId);
+	boolean request(int bId, String author);
+	BookBean borrowBook(int bId);
+	LinkedList<BookBean> searchBookByTitle(String bookName);
+	LinkedList<BookBean> searchBookByAuthor(String author);
+	LinkedList<BookBean> getBooksInfo();
+	boolean returnBook(int bId);
+}

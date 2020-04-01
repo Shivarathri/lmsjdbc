@@ -1,0 +1,49 @@
+package com.capgemini.librarymanagement.validation;
+
+import java.util.regex.Pattern;
+
+import com.capgemini.librarymanagement.exception.ValidationException;
+
+public class ValidationAdminStudent {
+	public boolean validatedId(int aid) throws ValidationException {
+		String idRegEx = "[0-9]{1}[0-9]{5}" ;
+		boolean result = false;
+		if (Pattern.matches(idRegEx, String.valueOf(aid))) {
+			result = true;
+		} else {
+			throw new ValidationException("Id should contains exactly 6 digits");
+		}
+		return result;
+	}
+	public boolean validatedName(String name) throws ValidationException {
+		String nameRegEx = "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$" ;
+		boolean result = false;
+		if (Pattern.matches(nameRegEx, String.valueOf(name))) {
+			result = true;
+		} else {
+			throw new ValidationException("Name should  contains only Alpabates");
+		}
+		return result;
+	}
+	
+	public boolean validatedMobile(String mobile) throws ValidationException {
+		String mobileRegEx = "(0/91)?[4-9][0-9]{9}" ;
+		boolean result = false;
+		if (Pattern.matches(mobileRegEx, String.valueOf(mobile))) {
+			result = true;
+		} else {
+			throw new ValidationException("Mobile Number  should start from 4 and It should contains 10 numbers ");
+		}
+		return result;
+	}
+	public boolean validatedEmail(String email) throws ValidationException {
+		String emailRegEx = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\\\.(?:[A-Z]{2,}|com|org))*$";
+		boolean result = false;
+		if (Pattern.matches(emailRegEx, String.valueOf(email))) {
+			result = true;
+		} else {
+			throw new ValidationException("Enter proper Email  ");
+		}
+		return result;
+	}
+}
